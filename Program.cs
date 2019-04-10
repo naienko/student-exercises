@@ -52,6 +52,8 @@ Have each instructor assign 2 exercises to each of the students. */
             sBrownlee.AssignExercise(Journal, kDubhglas);
 
             Console.WriteLine(thirty);
+            Console.WriteLine(twentynine);
+            Console.WriteLine(eveningeight);
         }
     }
 }

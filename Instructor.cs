@@ -33,8 +33,7 @@ namespace StudentExercises
 		}
 		
 		public override string ToString() {
-			return $@"{_firstname} {_lastname}, slack handle: {_handle}
-";
+			return $@"{_firstname} {_lastname}, slack handle: {_handle}";
 		}
     }
 }

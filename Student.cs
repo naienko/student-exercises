@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace StudentExercises
 {
@@ -26,7 +27,11 @@ namespace StudentExercises
 	   	}
 
 		public override string ToString() {
-			return $@"{_firstname} {_lastname}, slack handle: {_handle}";
+			StringBuilder output = new StringBuilder($@"{_firstname} {_lastname}, slack handle: {_handle}
+	Working on: 
+");
+			Exercises.ForEach(e => output.Append($"{e}\n"));
+			return output.ToString();
 		}
     }
 }

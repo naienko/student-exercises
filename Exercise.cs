@@ -11,5 +11,9 @@ namespace StudentExercises
 			Name = name;
 			Language = language;
 		}
+
+		public override string ToString() {
+			return $@"{Name}, {Language}";
+		}
     }
 }
