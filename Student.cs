@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace StudentExercises
 {
@@ -8,7 +9,7 @@ namespace StudentExercises
 	   private string _lastname;
 	   private string _handle;
 
-	   public Cohort cohort;
+	   public Cohort _cohort;
 
 	   public List<Exercise> Exercises { get; private set; } = new List<Exercise>();
 
@@ -20,7 +21,7 @@ namespace StudentExercises
 	   }
 
 	   public Student AssignCohort (Cohort cohort) {
-		   cohort = cohort;
+		   _cohort = cohort;
 		   return this;
 	   }
     }

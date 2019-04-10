@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace StudentExercises
 {
@@ -8,7 +9,7 @@ namespace StudentExercises
 	   private string _lastname;
 	   private string _handle;
 
-	   public Cohort cohort;
+	   public Cohort _cohort;
 
 	   public Instructor (string fullname, string slackHandle) {
 			string [] names = fullname.Split(" ");
@@ -18,7 +19,7 @@ namespace StudentExercises
 	   }
 
 	   public Instructor AssignCohort (Cohort cohort) {
-		   cohort = cohort;
+		   _cohort = cohort;
 		   return this;
 	   }
 

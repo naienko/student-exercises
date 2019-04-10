@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace StudentExercises
 {
@@ -21,18 +22,18 @@ namespace StudentExercises
 			Students.Add(students);
 			students.AssignCohort(cohort);
 		}
-		public void AddStudents (List<Student> students) {
+		public void AddStudents (List<Student> students, Cohort cohort) {
 			Students.AddRange(students);
 			foreach (Student element in students) {
 				element.AssignCohort(cohort);
 			}
 		}
 
-		public void AddInstructors (Instructor instructors) {
+		public void AddInstructors (Instructor instructors, Cohort cohort) {
 			Instructors.Add(instructors);
 			instructors.AssignCohort(cohort);
 		}
-		public void AddInstructors (List<Instructor> instructors) {
+		public void AddInstructors (List<Instructor> instructors, Cohort cohort) {
 			Instructors.AddRange(instructors);
 			foreach (Instructor element in instructors) {
 				element.AssignCohort(cohort);
