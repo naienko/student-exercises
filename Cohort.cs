@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace StudentExercises
 {
@@ -38,6 +39,18 @@ namespace StudentExercises
 			foreach (Instructor element in instructors) {
 				element.AssignCohort(cohort);
 			}
+		}
+
+		public override string ToString() {
+			StringBuilder output = new StringBuilder($@"
+{Name}
+Instructor
+");
+			Instructors.ForEach(i => output.Append($"{i}\n"));
+			output.Append($@"Students
+");
+			Students.ForEach(s => output.Append($"{s}\n"));
+			return output.ToString();
 		}
     }
 }

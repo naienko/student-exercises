@@ -2,3 +2,10 @@ C:\Users\naienko\workspace\csharp\StudentExercises\obj\Debug\netcoreapp2.2\Stude
 C:\Users\naienko\workspace\csharp\StudentExercises\obj\Debug\netcoreapp2.2\StudentExercises.csproj.CoreCompileInputs.cache
 C:\Users\naienko\workspace\csharp\StudentExercises\obj\Debug\netcoreapp2.2\StudentExercises.AssemblyInfoInputs.cache
 C:\Users\naienko\workspace\csharp\StudentExercises\obj\Debug\netcoreapp2.2\StudentExercises.AssemblyInfo.cs
+C:\Users\naienko\workspace\csharp\StudentExercises\bin\Debug\netcoreapp2.2\StudentExercises.deps.json
+C:\Users\naienko\workspace\csharp\StudentExercises\bin\Debug\netcoreapp2.2\StudentExercises.runtimeconfig.json
+C:\Users\naienko\workspace\csharp\StudentExercises\bin\Debug\netcoreapp2.2\StudentExercises.runtimeconfig.dev.json
+C:\Users\naienko\workspace\csharp\StudentExercises\bin\Debug\netcoreapp2.2\StudentExercises.dll
+C:\Users\naienko\workspace\csharp\StudentExercises\bin\Debug\netcoreapp2.2\StudentExercises.pdb
+C:\Users\naienko\workspace\csharp\StudentExercises\obj\Debug\netcoreapp2.2\StudentExercises.dll
+C:\Users\naienko\workspace\csharp\StudentExercises\obj\Debug\netcoreapp2.2\StudentExercises.pdb
