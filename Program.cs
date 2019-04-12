@@ -1,8 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace StudentExercises
 {
+    public class StudentsInCohort {
+        public Cohort cohortName { get; set; }
+        public int cohortCount { get; set; }
+    }
     class Program
     {
         static void Main()
@@ -54,6 +59,93 @@ Have each instructor assign 2 exercises to each of the students. */
             Console.WriteLine(thirty);
             Console.WriteLine(twentynine);
             Console.WriteLine(eveningeight);
+
+            List<Student> students = new List<Student>() {
+                pEris, bAllen, sRainault, kDubhglas
+            };
+            List<Exercise> exercises = new List<Exercise>() {
+                Journal, CarLot, KandyKorner, Personal
+            };
+            List<Instructor> instructors = new List<Instructor>() {
+                sBrownlee, eThawne, sStCyr
+            };
+            List<Cohort> cohorts = new List<Cohort>() {
+                eveningeight, twentynine, thirty
+            };
+
+            // List exercises for the JavaScript language by using the Where() LINQ method.
+            var javascriptExercises = exercises.Where(e => e.Language == "Javascript");
+            Console.WriteLine("Exercises in Javascript");
+            foreach (var item in javascriptExercises) {
+                Console.WriteLine(item);
+            }
+
+Console.WriteLine(" ");
+            //List students in a particular cohort by using the Where() LINQ method.
+            var cohortThirtyStudents = students.Where(s => s._cohort == thirty);
+            Console.WriteLine("Cohort Thirty students");
+            foreach (var item in cohortThirtyStudents) {
+                Console.WriteLine(item);
+            }
+
+Console.WriteLine(" ");
+            //List instructors in a particular cohort by using the Where() LINQ method.
+            var cohortTwentynineInstructors = instructors.Where(i => i._cohort == twentynine);
+            Console.WriteLine("Cohort Twenty Nine Instructors");
+            foreach (var item in cohortTwentynineInstructors) {
+                Console.WriteLine(item);
+            }
+
+Console.WriteLine(" ");
+            //Sort the students by their last name.
+            IEnumerable<Student> byLastName = from student in students
+                orderby student._lastname ascending
+                select student;
+            Console.WriteLine("Sort by last name");
+            foreach (var item in byLastName) {
+                Console.WriteLine(item);
+            }   
+
+Console.WriteLine(" ");
+            //Display any students that aren't working on any exercises (Make sure one of your student instances don't have any exercises. Create a new student if you need to.)
+            Student tMaclyr = new Student ("Teleri MacLyr", "selkiegirl");
+            students.Add(tMaclyr);
+            IEnumerable<Student> boredStudent = from student in students
+                where student.Exercises.Count == 0
+                select student;
+            Console.WriteLine("Students who have no exercises");
+            foreach (var item in boredStudent) {
+                Console.WriteLine(item);
+            }
+
+Console.WriteLine(" ");
+            //Which student is working on the most exercises? Make sure one of your students has more exercises than the others.
+            eThawne.AssignExercise(Personal, sRainault);
+            IEnumerable<Student> starStudents = from student in students 
+                orderby student.Exercises.Count descending
+                select student;
+            Console.WriteLine("The student who has the most exercises");
+            Console.WriteLine(starStudents.First());
+
+Console.WriteLine(" ");
+            //How many students in each cohort?
+            List<StudentsInCohort> studentsPerCohort = (
+                from student in students
+                group student by student._cohort into cohortGroup
+                select new StudentsInCohort {
+                    cohortName = cohortGroup.Key,
+                    cohortCount = cohortGroup.Count()
+                }
+            ).ToList();
+            foreach (StudentsInCohort entry in studentsPerCohort)
+            {
+                try{
+                Console.WriteLine($"{entry.cohortName.Name} has {entry.cohortCount} students in it.");
+                }
+                catch (NullReferenceException) {
+                    Console.WriteLine($"There are unassigned students!");
+                }
+            }
         }
     }
 }

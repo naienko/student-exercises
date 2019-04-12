@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace StudentExercises
 {
-    class Instructor
+    public class Instructor
     {
     	private string _firstname;
 		private string _lastname;
@@ -33,7 +33,8 @@ namespace StudentExercises
 		}
 		
 		public override string ToString() {
-			return $@"{_firstname} {_lastname}, slack handle: {_handle}";
+			StringBuilder output = new StringBuilder($@"{_firstname} {_lastname}");
+			//output.Append($", slack handle: {_handle}");
 		}
     }
 }

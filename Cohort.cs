@@ -4,7 +4,7 @@ using System.Text;
 
 namespace StudentExercises
 {
-    class Cohort
+    public class Cohort
     {
 		public string Name { get; set ; }
 

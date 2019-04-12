@@ -4,10 +4,10 @@ using System.Text;
 
 namespace StudentExercises
 {
-    class Student
+    public class Student
     {
-    	private string _firstname;
-		private string _lastname;
+    	public string _firstname { get; }
+		public string _lastname { get; }
 		private string _handle;
 
 		public Cohort _cohort;
@@ -27,10 +27,9 @@ namespace StudentExercises
 	   	}
 
 		public override string ToString() {
-			StringBuilder output = new StringBuilder($@"{_firstname} {_lastname}, slack handle: {_handle}
-	Working on: 
-");
-			Exercises.ForEach(e => output.Append($"{e}\n"));
+			StringBuilder output = new StringBuilder($@"{_firstname} {_lastname}");
+			//output.Append($", slack handle: {_handle}");
+			//Exercises.ForEach(e => output.Append($"{e}\n"));
 			return output.ToString();
 		}
     }
