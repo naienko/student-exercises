@@ -11,7 +11,6 @@ namespace StudentExercises {
 
 		public void AssignCohort (Cohort cohort) {
 			_cohort = cohort;
-			return this;
 		}
 	}
 }

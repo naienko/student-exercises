@@ -13,7 +13,6 @@ namespace StudentExercises
 			_lastname = names[1];
 			_handle = slackHandle;
 		}
-
 		public void AssignExercise(Exercise exercise, Student student)
 		{
 			student.Exercises.Add(exercise);
